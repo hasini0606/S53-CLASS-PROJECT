@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgriSaathi | Farmer-Friendly Agriculture</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     ROLE SELECTION PAGE
+========================================================= -->
+
+<div id="rolePage" class="page">
+
+    <div class="role-container">
+
+        <div class="role-logo">
+            🌾 <span>AgriSaathi</span>
+        </div>
+
+        <p class="tagline">
+            🌱 SMART FARMING • BETTER FUTURE
+        </p>
+
+        <h1>
+            Welcome to AgriSaathi
+        </h1>
+
+        <p class="role-description">
+            Your smart agriculture platform connecting farmers and buyers.
+        </p>
+
+        <h2>
+            Who are you?
+        </h2>
+
+        <div class="role-cards">
+
+            <!-- =================================================
+                 FARMER ROLE
+            ================================================== -->
+
+            <div class="role-card" id="farmerRole">
+
+                <div class="role-icon">
+                    👨‍🌾
+                </div>
+
+                <h3>
+                    Farmer
+                </h3>
+
+                <p>
+                    Get crop recommendations, weather information,
+                    market prices and manage your farm.
+                </p>
+
+                <button
+                    class="btn primary role-btn"
+                    onclick="selectRole('farmer')">
+
+                    Continue as Farmer →
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 BUYER ROLE
+            ================================================== -->
+
+            <div class="role-card" id="buyerRole">
+
+                <div class="role-icon">
+                    🛒
+                </div>
+
+                <h3>
+                    Buyer
+                </h3>
+
+                <p>
+                    Browse agricultural products, view prices,
+                    find producers and send purchase requests.
+                </p>
+
+                <button
+                    class="btn primary role-btn"
+                    onclick="selectRole('buyer')">
+
+                    Continue as Buyer →
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     LOGIN PAGE
+========================================================= -->
+
+<div id="loginPage" class="page hidden">
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <div class="role-logo">
+                🌾 <span>AgriSaathi</span>
+            </div>
+
+            <div id="loginIcon" class="login-icon">
+                👨‍🌾
+            </div>
+
+            <h1 id="loginTitle">
+                Farmer Login
+            </h1>
+
+            <p id="loginDescription">
+                Login to access your farmer dashboard.
+            </p>
+
+
+            <!-- LOGIN FORM -->
+
+            <form id="loginForm">
+
+                <label for="username">
+                    👤 Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username"
+                    required
+                >
+
+
+                <label for="password">
+                    🔒 Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                >
+
+
+                <button
+                    type="submit"
+                    class="btn primary full">
+
+                    Login →
+
+                </button>
+
+            </form>
+
+
+            <p
+                id="loginMessage"
+                class="login-message">
+            </p>
+
+
+            <!-- CHANGE ROLE -->
+
+            <button
+                class="back-btn"
+                onclick="backToRoleSelection()">
+
+                ← Change Role
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     FARMER DASHBOARD
+========================================================= -->
+
+<div id="farmerDashboard" class="dashboard-page hidden">
+
+
+    <!-- =====================================================
+         FARMER HEADER
+    ====================================================== -->
+
+    <header>
+
+        <div class="logo">
+            🌾 AgriSaathi
+        </div>
+
+
+        <nav>
+
+            <a href="#farmerHome">
+                Home
+            </a>
+
+            <a href="#farmerTools">
+                Dashboard
+            </a>
+
+            <a href="#farmerCrops">
+                Crops
+            </a>
+
+            <a href="#farmerMarket">
+                Market
+            </a>
+
+            <a href="#farmerSchemes">
+                Schemes
+            </a>
+
+            <a href="#farmerHelp">
+                Help
+            </a>
+
+        </nav>
+
+
+        <div class="header-right">
+
+            <span
+                id="farmerWelcome"
+                class="welcome-user">
+
+                Farmer
+
+            </span>
+
+
+            <button
+                id="farmerLanguageBtn"
+                class="language-btn">
+
+                తెలుగు
+
+            </button>
+
+
+            <button
+                class="logout-btn"
+                onclick="logout()">
+
+                Logout
+
+            </button>
+
+
+            <!-- SWITCH FARMER → BUYER -->
+
+            <button
+                class="switch-role-btn"
+                onclick="switchRole('buyer')">
+
+                🛒 Switch to Buyer
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         FARMER HOME
+    ====================================================== -->
+
+    <section
+        id="farmerHome"
+        class="hero">
+
+        <div class="hero-content">
+
+            <p class="tagline">
+                🌱 SMART FARMING • BETTER FUTURE
+            </p>
+
+            <h1 id="farmerHeroTitle">
+                Your Smart Farming Companion
+            </h1>
+
+            <p id="farmerHeroText">
+                Simple tools and useful information to help you make
+                better farming decisions.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#farmerTools"
+                    class="btn primary">
+
+                    Explore Dashboard
+
+                </a>
+
+
+                <button
+                    class="btn secondary"
+                    id="farmerVoiceBtn">
+
+                    🎙️ Ask AgriSaathi
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="farmer-icon">
+                👨‍🌾
+            </div>
+
+            <h2>
+                Welcome, Farmer!
+            </h2>
+
+            <p>
+                Grow smarter. Farm better.
+            </p>
+
+
+            <div class="stats">
+
+                <span>
+                    🌱 Crop Guidance
+                </span>
+
+                <span>
+                    📈 Market Updates
+                </span>
+
+                <span>
+                    🌦️ Weather Info
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FARMER DASHBOARD TOOLS
+    ====================================================== -->
+
+    <section
+        id="farmerTools"
+        class="section">
+
+        <div class="heading">
+
+            <p class="tagline">
+                FARMER DASHBOARD
+            </p>
+
+            <h2>
+                Everything You Need in One Place
+            </h2>
+
+            <p>
+                Access useful farming tools quickly and easily.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <!-- WEATHER -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🌦️
+                </div>
+
+                <h3>
+                    Weather Information
+                </h3>
+
+                <p>
+                    View weather conditions and farming advice.
+                </p>
+
+                <button
+                    class="action-btn"
+                    id="weatherBtn">
+
+                    View Weather →
+
+                </button>
+
+            </div>
+
+
+
+            <!-- CROPS -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🌱
+                </div>
+
+                <h3>
+                    Crop Recommendation
+                </h3>
+
+                <p>
+                    Find crops suitable for your soil and season.
+                </p>
+
+                <a
+                    class="action-btn"
+                    href="#farmerCrops">
+
+                    Get Recommendations →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- MARKET -->
+
+            <div class="card">
+
+                <div class="icon">
+                    📈
+                </div>
+
+                <h3>
+                    Market Prices
+                </h3>
+
+                <p>
+                    Search sample prices for common crops.
+                </p>
+
+                <a
+                    class="action-btn"
+                    href="#farmerMarket">
+
+                    Check Prices →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- EXPENSES -->
+
+            <div class="card">
+
+                <div class="icon">
+                    💰
+                </div>
+
+                <h3>
+                    Farm Expenses
+                </h3>
+
+                <p>
+                    Calculate your total farming cost.
+                </p>
+
+                <a
+                    class="action-btn"
+                    href="#expenses">
+
+                    Calculate →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- MY CROPS -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🌾
+                </div>
+
+                <h3>
+                    My Crops
+                </h3>
+
+                <p>
+                    Keep track of crops grown on your farm.
+                </p>
+
+                <button
+                    class="action-btn"
+                    onclick="showMyCrops()">
+
+                    View My Crops →
+
+                </button>
+
+            </div>
+
+
+
+            <!-- SELL PRODUCE -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🛒
+                </div>
+
+                <h3>
+                    Sell My Produce
+                </h3>
+
+                <p>
+                    Add your agricultural products for buyers.
+                </p>
+
+                <button
+                    class="action-btn"
+                    onclick="showSellProduce()">
+
+                    Sell Produce →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="weatherResult"
+            class="result hidden">
+        </div>
+
+
+        <div
+            id="farmerExtraResult"
+            class="result hidden">
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FARMER CROP RECOMMENDATION
+    ====================================================== -->
+
+    <section
+        id="farmerCrops"
+        class="section light">
+
+        <div class="heading">
+
+            <p class="tagline">
+                SMART CROP GUIDE
+            </p>
+
+            <h2>
+                Find the Right Crop
+            </h2>
+
+            <p>
+                Select your soil type and season to get suitable crops.
+            </p>
+
+        </div>
+
+
+        <div class="tool-box">
+
+            <label>
+                Soil Type
+            </label>
+
+            <select id="soilType">
+
+                <option value="">
+                    Choose Soil
+                </option>
+
+                <option value="black">
+                    Black Soil
+                </option>
+
+                <option value="red">
+                    Red Soil
+                </option>
+
+                <option value="sandy">
+                    Sandy Soil
+                </option>
+
+                <option value="alluvial">
+                    Alluvial Soil
+                </option>
+
+            </select>
+
+
+            <label>
+                Season
+            </label>
+
+            <select id="season">
+
+                <option value="">
+                    Choose Season
+                </option>
+
+                <option value="kharif">
+                    Kharif
+                </option>
+
+                <option value="rabi">
+                    Rabi
+                </option>
+
+                <option value="summer">
+                    Summer
+                </option>
+
+            </select>
+
+
+            <button
+                class="btn primary full"
+                id="recommendBtn">
+
+                🌱 Recommend Crops
+
+            </button>
+
+
+            <div
+                id="cropResult"
+                class="result hidden">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FARMER MARKET
+    ====================================================== -->
+
+    <section
+        id="farmerMarket"
+        class="section">
+
+        <div class="heading">
+
+            <p class="tagline">
+                MARKET INFORMATION
+            </p>
+
+            <h2>
+                Crop Market Prices
+            </h2>
+
+            <p>
+                Search the sample market price of an agricultural crop.
+            </p>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="cropSearch"
+                placeholder="Enter crop name"
+            >
+
+
+            <button
+                class="btn primary"
+                id="marketBtn">
+
+                Search
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="marketResult"
+            class="market-result">
+
+            Search for a crop to view its sample price.
+
+        </div>
+
+
+        <p class="note">
+            * Prices are sample data for demonstration.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FARM EXPENSES
+    ====================================================== -->
+
+    <section
+        id="expenses"
+        class="section light">
+
+        <div class="heading">
+
+            <p class="tagline">
+                FARM MANAGEMENT
+            </p>
+
+            <h2>
+                Farm Expense Calculator
+            </h2>
+
+            <p>
+                Enter your farm area and expenses per acre
+                to calculate the total farming cost.
+            </p>
+
+        </div>
+
+
+        <div class="tool-box">
+
+            <label>
+                🌾 Farm Area (Acres)
+            </label>
+
+            <input
+                type="number"
+                id="acres"
+                placeholder="Enter number of acres"
+                min="0.1"
+                step="0.1"
+            >
+
+
+            <label>
+                🌾 Seeds Cost per Acre (₹)
+            </label>
+
+            <input
+                type="number"
+                id="seeds"
+                placeholder="Enter seeds cost per acre"
+                min="0"
+            >
+
+
+            <label>
+                🧪 Fertilizer Cost per Acre (₹)
+            </label>
+
+            <input
+                type="number"
+                id="fertilizer"
+                placeholder="Enter fertilizer cost per acre"
+                min="0"
+            >
+
+
+            <label>
+                👷 Labour Cost per Acre (₹)
+            </label>
+
+            <input
+                type="number"
+                id="labour"
+                placeholder="Enter labour cost per acre"
+                min="0"
+            >
+
+
+            <label>
+                🚜 Other Expenses per Acre (₹)
+            </label>
+
+            <input
+                type="number"
+                id="other"
+                placeholder="Enter other expenses per acre"
+                min="0"
+            >
+
+
+            <button
+                class="btn primary full"
+                id="expenseBtn">
+
+                Calculate Total
+
+            </button>
+
+
+            <div
+                id="expenseResult"
+                class="result hidden">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FARMER SCHEMES
+    ====================================================== -->
+
+    <section
+        id="farmerSchemes"
+        class="section">
+
+        <div class="heading">
+
+            <p class="tagline">
+                GOVERNMENT SUPPORT
+            </p>
+
+            <h2>
+                Agricultural Schemes
+            </h2>
+
+            <p>
+                Explore useful government support programs.
+            </p>
+
+        </div>
+
+
+        <div class="cards scheme-cards">
+
+
+            <!-- PM-KISAN -->
+
+            <div class="card">
+
+                <div class="icon">
+                    💰
+                </div>
+
+                <h3>
+                    PM-KISAN
+                </h3>
+
+                <p>
+                    Income support for eligible farmer families.
+                </p>
+
+                <button
+                    class="action-btn schemeBtn"
+                    data-scheme="PM-KISAN">
+
+                    Learn More →
+
+                </button>
+
+            </div>
+
+
+
+            <!-- PMFBY -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    PMFBY
+                </h3>
+
+                <p>
+                    Crop insurance support against farming risks.
+                </p>
+
+                <button
+                    class="action-btn schemeBtn"
+                    data-scheme="PMFBY">
+
+                    Learn More →
+
+                </button>
+
+            </div>
+
+
+
+            <!-- PMKSY -->
+
+            <div class="card">
+
+                <div class="icon">
+                    💧
+                </div>
+
+                <h3>
+                    PMKSY
+                </h3>
+
+                <p>
+                    Support for irrigation and water management.
+                </p>
+
+                <button
+                    class="action-btn schemeBtn"
+                    data-scheme="PMKSY">
+
+                    Learn More →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="schemeResult"
+            class="result hidden">
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FARMER HELP
+    ====================================================== -->
+
+    <section
+        id="farmerHelp"
+        class="help">
+
+        <div>
+
+            <p class="tagline">
+                NEED HELP?
+            </p>
+
+            <h2>
+                Technology Made Simple for Farmers
+            </h2>
+
+            <p>
+                Use our tools or contact your local agricultural
+                support office.
+            </p>
+
+        </div>
+
+
+        <button
+            class="btn secondary"
+            id="helpVoiceBtn">
+
+            🎙️ Voice Assistant
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FARMER FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="logo">
+            🌾 AgriSaathi
+        </div>
+
+        <p>
+            Empowering farmers through simple technology.
+        </p>
+
+        <p>
+            © 2026 AgriSaathi | College Project
+        </p>
+
+    </footer>
+
+</div>
+
+
+
+<!-- =========================================================
+     BUYER DASHBOARD
+========================================================= -->
+
+<div id="buyerDashboard" class="dashboard-page hidden">
+
+
+    <!-- =====================================================
+         BUYER HEADER
+    ====================================================== -->
+
+    <header>
+
+        <div class="logo">
+            🌾 AgriSaathi
+        </div>
+
+
+        <nav>
+
+            <a href="#buyerHome">
+                Home
+            </a>
+
+            <a href="#buyerTools">
+                Dashboard
+            </a>
+
+            <a href="#products">
+                Products
+            </a>
+
+            <a href="#buyerMarket">
+                Market
+            </a>
+
+            <a href="#buyerRequests">
+                My Requests
+            </a>
+
+            <a href="#buyerHelp">
+                Help
+            </a>
+
+        </nav>
+
+
+        <div class="header-right">
+
+            <span
+                id="buyerWelcome"
+                class="welcome-user">
+
+                Buyer
+
+            </span>
+
+
+            <button
+                id="buyerLanguageBtn"
+                class="language-btn">
+
+                తెలుగు
+
+            </button>
+
+
+            <button
+                class="logout-btn"
+                onclick="logout()">
+
+                Logout
+
+            </button>
+
+
+            <!-- SWITCH BUYER → FARMER -->
+
+            <button
+                class="switch-role-btn"
+                onclick="switchRole('farmer')">
+
+                👨‍🌾 Switch to Farmer
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         BUYER HOME
+    ====================================================== -->
+
+    <section
+        id="buyerHome"
+        class="hero buyer-hero">
+
+        <div class="hero-content">
+
+            <p class="tagline">
+                🛒 SMART BUYING • BETTER FARMING
+            </p>
+
+            <h1>
+                Find Fresh Agricultural Products
+            </h1>
+
+            <p>
+                Connect with farmers, compare agricultural products
+                and send purchase requests easily.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#products"
+                    class="btn primary">
+
+                    Browse Products
+
+                </a>
+
+
+                <button
+                    class="btn secondary"
+                    id="buyerVoiceBtn">
+
+                    🎙️ Ask AgriSaathi
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="farmer-icon">
+                🛒
+            </div>
+
+            <h2>
+                Welcome, Buyer!
+            </h2>
+
+            <p>
+                Find. Connect. Purchase.
+            </p>
+
+
+            <div class="stats">
+
+                <span>
+                    🌾 Fresh Products
+                </span>
+
+                <span>
+                    📈 Market Prices
+                </span>
+
+                <span>
+                    🤝 Farmer Connect
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BUYER DASHBOARD
+    ====================================================== -->
+
+    <section
+        id="buyerTools"
+        class="section">
+
+        <div class="heading">
+
+            <p class="tagline">
+                BUYER DASHBOARD
+            </p>
+
+            <h2>
+                Everything You Need to Buy
+            </h2>
+
+            <p>
+                Find agricultural products and connect with producers.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <!-- BROWSE PRODUCTS -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🌾
+                </div>
+
+                <h3>
+                    Browse Products
+                </h3>
+
+                <p>
+                    View agricultural products available from farmers.
+                </p>
+
+                <a
+                    class="action-btn"
+                    href="#products">
+
+                    Browse Now →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- SEARCH PRODUCTS -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🔍
+                </div>
+
+                <h3>
+                    Search Products
+                </h3>
+
+                <p>
+                    Search for rice, cotton, maize, vegetables and more.
+                </p>
+
+                <a
+                    class="action-btn"
+                    href="#products">
+
+                    Search Products →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- PRODUCT PRICES -->
+
+            <div class="card">
+
+                <div class="icon">
+                    📈
+                </div>
+
+                <h3>
+                    Product Prices
+                </h3>
+
+                <p>
+                    Check sample agricultural market prices.
+                </p>
+
+                <a
+                    class="action-btn"
+                    href="#buyerMarket">
+
+                    Check Prices →
+
+                </a>
+
+            </div>
+
+
+
+            <!-- REQUESTS -->
+
+            <div class="card">
+
+                <div class="icon">
+                    📋
+                </div>
+
+                <h3>
+                    My Requests
+                </h3>
+
+                <p>
+                    View purchase requests sent to farmers.
+                </p>
+
+                <a
+                    class="action-btn"
+                    href="#buyerRequests">
+
+                    View Requests →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BUYER PRODUCTS
+    ====================================================== -->
+
+    <section
+        id="products"
+        class="section light">
+
+        <div class="heading">
+
+            <p class="tagline">
+                AGRICULTURAL PRODUCTS
+            </p>
+
+            <h2>
+                Browse Products
+            </h2>
+
+            <p>
+                Explore products listed by farmers.
+            </p>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="productSearch"
+                placeholder="Search product..."
+            >
+
+
+            <button
+                class="btn primary"
+                id="productSearchBtn">
+
+                Search
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="productContainer"
+            class="product-grid">
+
+            <!-- Products generated using JavaScript -->
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BUYER PURCHASE REQUEST
+    ====================================================== -->
+
+    <section
+        id="purchaseRequest"
+        class="section">
+
+        <div class="heading">
+
+            <p class="tagline">
+                PURCHASE REQUEST
+            </p>
+
+            <h2>
+                Send Purchase Request
+            </h2>
+
+            <p>
+                Select a product and enter the quantity you need.
+            </p>
+
+        </div>
+
+
+        <div class="tool-box">
+
+            <label>
+                Selected Product
+            </label>
+
+            <input
+                type="text"
+                id="selectedProduct"
+                readonly
+                placeholder="Select a product first"
+            >
+
+
+            <label>
+                Farmer / Producer
+            </label>
+
+            <input
+                type="text"
+                id="selectedFarmer"
+                readonly
+                placeholder="Farmer name"
+            >
+
+
+            <label>
+                Quantity Required (kg)
+            </label>
+
+            <input
+                type="number"
+                id="purchaseQuantity"
+                min="1"
+                placeholder="Enter quantity"
+            >
+
+
+            <label>
+                Message to Farmer
+            </label>
+
+            <textarea
+                id="purchaseMessage"
+                rows="4"
+                placeholder="Enter your message..."
+            ></textarea>
+
+
+            <button
+                class="btn primary full"
+                id="requestBtn">
+
+                Send Purchase Request
+
+            </button>
+
+
+            <div
+                id="purchaseResult"
+                class="result hidden">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BUYER MARKET
+    ====================================================== -->
+
+    <section
+        id="buyerMarket"
+        class="section light">
+
+        <div class="heading">
+
+            <p class="tagline">
+                MARKET INFORMATION
+            </p>
+
+            <h2>
+                Agricultural Market Information
+            </h2>
+
+            <p>
+                Check sample prices of commonly traded crops.
+            </p>
+
+        </div>
+
+
+        <div class="market-table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Crop
+                        </th>
+
+                        <th>
+                            Market Price / kg
+                        </th>
+
+                        <th>
+                            Trend
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="buyerMarketTable">
+
+                    <!-- Data generated using JavaScript -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <p class="note">
+            * Prices shown are sample data for the college project.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BUYER REQUESTS
+    ====================================================== -->
+
+    <section
+        id="buyerRequests"
+        class="section">
+
+        <div class="heading">
+
+            <p class="tagline">
+                MY PURCHASE REQUESTS
+            </p>
+
+            <h2>
+                Purchase Requests
+            </h2>
+
+            <p>
+                View the requests you have submitted.
+            </p>
+
+        </div>
+
+
+        <div
+            id="requestList"
+            class="request-list">
+
+            <p class="empty-message">
+                No purchase requests yet.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BUYER HELP
+    ====================================================== -->
+
+    <section
+        id="buyerHelp"
+        class="help">
+
+        <div>
+
+            <p class="tagline">
+                NEED HELP?
+            </p>
+
+            <h2>
+                Easy Agricultural Buying
+            </h2>
+
+            <p>
+                Search products, check prices and connect with farmers.
+            </p>
+
+        </div>
+
+
+        <button
+            class="btn secondary"
+            id="buyerHelpVoiceBtn">
+
+            🎙️ Voice Assistant
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BUYER FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="logo">
+            🌾 AgriSaathi
+        </div>
+
+        <p>
+            Connecting farmers and buyers through technology.
+        </p>
+
+        <p>
+            © 2026 AgriSaathi | College Project
+        </p>
+
+    </footer>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
